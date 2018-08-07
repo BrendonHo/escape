@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Escape Room Reviews - Esc</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <?php
+        session_start();
+        if (!isset($_SESSION['username']))
+        {
+            exit();
+        }
+    ?>
+    <nav>
+        <ul>
+            <li class="top_left"><a class="top_left" href="index.html">Home</a></li>
+            <li class="top_left"><a class="top_left" href="aboutme.html">Write a Review</a></li>
+            <li class="top_left"><a class="top_left" href="contactme.html">Contact Me</a></li>
+            <li class="top_right"><a class="top_right" href="logout.php">Log Out</a></li>
+        </ul>
+    </nav>
+    <a href="index.html">
+        <img id="logo" src="https://pbs.twimg.com/profile_images/720670990930456576/kYteOZVF_400x400.jpg" alt="Esc">
+    </a>
+    <form id="search" method="get">
+        Find
+            <input autocomplete="off" maxlength="64" name="find_desc" placeholder="escape rooms" value="">
+        Near
+            <input autocomplete="off" maxlength="80" name="find_loc" placeholder="city or state" value="">
+        <input type="submit" value="Submit">
+    </form>
+
+
